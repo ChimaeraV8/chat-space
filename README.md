@@ -1,24 +1,53 @@
-# README
+# chat-spaceのDB設計
+## usersテーブル
+|column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :groups
+- has_many :messages
+- has_many :photos
 
-Things you may want to cover:
+## groupsテーブル
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|group_user_id|integer|null: false, foreign_key: true|
 
-* Ruby version
+### Association
+- has_many :users, through: :group_users
+- has_many :messages
 
-* System dependencies
+## group_usersテーブル
+|column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* Configuration
+### Association
+- belongs_to :user
+- belomgs_to :group
 
-* Database creation
+## messagesテーブル
+|column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|photo|string||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* Database initialization
+### Association
+- belongs_to :user
+- belongs_to :group
 
-* How to run the test suite
+## photosテーブル
+|column|Type|Options|
+|------|----|-------|
+|file|string|null: false|
+|message_id|integer|null: false, foreign_key: true|
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :message
