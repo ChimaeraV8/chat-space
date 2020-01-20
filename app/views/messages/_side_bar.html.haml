@@ -4,9 +4,13 @@
       .top-items__name
         userネーム
       .top-items__icons
-        = link_to "#" do
+        = link_to "#" , class: "top-items__icons--item" do
           = icon('far', 'edit')
-        = link_to "#" do
+        = link_to "#", class:"top-items__icons--item" do
           = icon('fas', 'cog')
   .side-bar__group-list
-    グループリスト
+    .group-items
+      .group-items__name
+        グループリスト
+      .group-items__message
+        グループメッセージ
