@@ -31,6 +31,7 @@
   justify-content: space-between;
   &__name{
     line-height: 20px;
+    font-weight: bold;
   }
   &__icons{
     width:60px;
@@ -49,11 +50,11 @@
   padding: 20px 20px 40px 20px;
   font-weight: bold;
   color: #ffffff;
-  &__name{
+  &__group-name{
     font-size:15px;
     margin-bottom: 5px;
   }
-  &__message{
+  &__info-message{
     font-size:11px;
   }
 }
@@ -66,6 +67,8 @@
       height:100px;
       background-color: #ffffff;
       border-bottom: 1px solid #eeeeee;
+      display:flex;
+      justify-content: space-between;
     }
     &__message-list{
       height:calc(100vh - 100px - 90px);
@@ -76,3 +79,81 @@
       background-color: #d2d2d2;
     }
   }
+
+.group-overview{
+  padding-left:40px;
+  &__group-name{
+    font-size:20px;
+    color: #333333;
+    padding-top: 35px;
+    font-weight: bold;
+  }
+  &__member-list{
+    font-size: 12px;
+    color:#999999;
+    padding-top: 15px;
+  }
+}
+
+.edit-btn{
+  margin:28px;
+  width:72px;
+  border: 1px solid #38aef0;
+  color:#38aef0;
+  font-size: 16px;
+  line-height: 40px;
+  padding:0 20px 0 20px;
+  text-decoration: none;
+}
+
+.member-info{
+  padding:35px 0 0 40px;
+  display:flex;
+  &__member-name{
+    color:#333333;
+    font-size:16px;
+    font-weight: bold;
+    padding-right:10px;
+  }
+  &__time-stamp{
+    color:#999999;
+    font-size:12px;
+  }
+}
+
+.message-items{
+  padding:12px 0 46px 40px;
+  &__message{
+    color:#434A54;
+    font-size: 14px;
+  }
+}
+.form-box{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height:100%;
+  &__form-area{
+    height:50px;
+    line-height: 50px;
+    padding:0 10px 0 10px;
+    margin:0 0 0 40px;
+    display: flex;
+    justify-content: space-between;
+    &--text{
+
+    }
+    &--icon{
+      
+    }
+  }
+  &__send-btn{
+    background-color: #38aef0;
+    color:#eeeeee;
+    height:50px;
+    line-height: 50px;
+    margin:0 40px 0 15px;
+    padding:0 25px 0 25px;
+    text-decoration: none;
+  }
+}

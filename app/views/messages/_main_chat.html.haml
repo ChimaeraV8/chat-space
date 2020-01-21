@@ -1,4 +1,35 @@
 .chat-main
   .chat-main__group-info
+    .group-overview
+      .group-overview__group-name
+        Test
+      .group-overview__member-list
+        Member: Takahashi
+    =link_to "#" ,class:"edit-btn" do
+      Edit
   .chat-main__message-list
+    .member-info
+      .member-info__member-name
+        Takahashi
+      .member-info__time-stamp
+        2019/11/20(Wed) 09:43:01
+    .message-items
+      .message
+        おはよう！
+    .member-info
+      .member-info__member-name
+        Takahashi
+      .member-info__time-stamp
+        2019/11/20(Wed) 09:48:34
+    .message-items
+      .message
+        今日も朝からご飯が美味しい
   .chat-main__message-form
+    .form-box
+      .form-box__form-area
+        .form-box__form-area--text
+          type a message
+        .form-box__form-area--icon
+          ◆
+      =link_to "#" , class: "form-box__send-btn" do        
+        SEND
