@@ -1,0 +1,21 @@
+.side-bar
+  .side-bar__user-name
+    .top-items
+      .top-items__name
+        userネーム
+      .top-items__icons
+        = link_to "#" , class: "top-items__icons--item" do
+          = icon('far', 'edit')
+        = link_to "#", class:"top-items__icons--item" do
+          = icon('fas', 'cog')
+  .side-bar__group-list
+    .group-items
+      .group-items__group-name
+        グループリスト
+      .group-items__info-message
+        グループメッセージ
+    .group-items
+      .group-items__group-name
+        グループリスト2
+      .group-items__info-message
+        グループメッセージ2
