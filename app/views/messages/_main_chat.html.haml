@@ -33,9 +33,9 @@
         今日も朝からご飯が美味しい
   .chat-main__message-form
     .form-box
-      %form{:action=>"#",:method=>"post",:class=>"form-box__form-area"}
-        %input{:placeholder=>"type a message",:type=>"text",:class=>"form-box__form-text"}
+      %form{action:"#",method:"post",class:"form-box__form-area"}
+        %input{placeholder:"type a message",type:"text",class:"form-box__form-text"}
         %label{class:"form-box__image-icon"}
           = icon('fa','image',class:"form-box__image-icon")
-          %input{:type=>"file",:class=>"form-box__display-none"}
-        %input{:type=>"submit",:value=>"SEND",:class=>"form-box__send-btn"}
+          %input{type:"file",class:"form-box__display-none"}
+        %input{type:"submit",value:"SEND",class:"form-box__send-btn"}
