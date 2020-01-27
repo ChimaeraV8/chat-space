@@ -1,36 +1,11 @@
-.chat-main
-  .chat-main__group-info
-    .group-overview
-      .group-overview__group-name
-        グループリスト
-      .group-overview__member-list
-        %ul.group-overview__member-list--list
-          Member:
-          %li.group-overview__member-list--member
-            Masa
-          %li.group-overview__member-list--member
-            Takashi
-          %li.group-overview__member-list--member
-            Syuji
-    =link_to "#" ,class:"edit-btn" do
-      Edit
-  .chat-main__message-list
-    .member-info
-      .member-info__member-name
-        = message.user.name
-      .member-info__time-stamp
-        = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-    .message-items
-      - if message.content.present?
-      .message
-        = message.content
-      = image_tag message.image.url, class: 'message-items__message--image' if message.image.present?
-  .chat-main__message-form
-    .form-box
-      = form_for [@group, @message] do |f|
-        =f.text_field :text, class: 'form-box__form-area',placeholder: 'type a message'
-        .form-box__image-icon
-          = f.label :photo,class: 'form-box__image-icon' do
-            = icon('fa','image',class:'form-box__image-icon')
-            = f.file_field :photo, class: 'form-box__display-none'
-          = f.submit 'SEND', class: 'form-box__send-btn'
+
+.member-info
+  .member-info__member-name
+    = message.user.name
+  .member-info__time-stamp
+    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+.message-items
+  - if message.text.present?
+    .message
+      = message.text
+  = image_tag message.photo.url, class: 'message-items__message--image' if message.photo.present?

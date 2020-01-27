@@ -154,18 +154,18 @@ $SideBGcolor:#253141;
     display: flex;
     justify-content: space-between;
     line-height: 50px;
-    padding:0 0 0 40px;
+    padding-left:40px;
+    position: relative;
     }
   &__form-text{
-    padding:0 10px 0 10px;
+    padding:0 10px;
     width:100%;
-    position: relative;
   }
-  &__image-icon{
-    position: absolute;
-    right:90px;
-    bottom:19px;
-  }
+    &__image-icon{
+      position: absolute;
+      right:170px;
+      top:15px;
+    }
   &__display-none{
     display:none;
   }
@@ -175,7 +175,7 @@ $SideBGcolor:#253141;
     height:50px;
     line-height: 50px;
     margin:0 40px 0 15px;
-    padding:0 25px 0 25px;
+    padding:0 25px 0;
     text-decoration: none;
   }
 }

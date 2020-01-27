@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
-  belongs_to :user
   belongs_to :group
+  belongs_to :user
 
   validates :text, presence: true, unless: :photo?
-  mount_uploader :photo, ImageUploader
+  mount_uploader :photo, PhotoUploader
 end
