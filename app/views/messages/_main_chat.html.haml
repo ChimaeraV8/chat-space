@@ -2,17 +2,14 @@
   .chat-main__group-info
     .group-overview
       .group-overview__group-name
-        グループリスト
+        = @group.name
       .group-overview__member-list
         %ul.group-overview__member-list--list
           Member:
           %li.group-overview__member-list--member
-            Masa
-          %li.group-overview__member-list--member
-            Takashi
-          %li.group-overview__member-list--member
-            Syuji
-    =link_to "#" ,class:"edit-btn" do
+            - @user.each do |u|
+              = u.name
+    =link_to "/groups/#{@group[:id]}/edit" ,class:"edit-btn" do
       Edit
   .chat-main__message-list
     = render @messages
