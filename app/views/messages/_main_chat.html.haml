@@ -15,27 +15,12 @@
     =link_to "#" ,class:"edit-btn" do
       Edit
   .chat-main__message-list
-    .member-info
-      .member-info__member-name
-        Masa
-      .member-info__time-stamp
-        2019/11/20(Wed) 09:43:01
-    .message-items
-      .message
-        おはよう！
-    .member-info
-      .member-info__member-name
-        Takashi
-      .member-info__time-stamp
-        2019/11/20(Wed) 09:48:34
-    .message-items
-      .message
-        今日も朝からご飯が美味しい
+    = render @messages
   .chat-main__message-form
     .form-box
-      %form{action:"#",method:"post",class:"form-box__form-area"}
-        %input{placeholder:"type a message",type:"text",class:"form-box__form-text"}
-        %label{class:"form-box__image-icon"}
-          = icon('fa','image',class:"form-box__image-icon")
-          %input{type:"file",class:"form-box__display-none"}
-        %input{type:"submit",value:"SEND",class:"form-box__send-btn"}
+      = form_for [@group, @message],html: { class: "form-box__form-area" } do |f|
+        =f.text_field :text, class: 'form-box__form-text', placeholder: 'type a message'
+        = f.label :photo do
+          = icon('fa','image',class:'form-box__image-icon')
+          = f.file_field :photo, class: 'form-box__display-none'
+        = f.submit 'SEND', class: 'form-box__send-btn'

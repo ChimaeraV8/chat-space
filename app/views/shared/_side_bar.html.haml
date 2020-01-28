@@ -11,8 +11,8 @@
   .side-bar__group-list
     - current_user.groups.each do |group|
       .group-items
-        = link_to '#' do
+        = link_to group_messages_path(group),class: "top-items__icons--item" do
           .group-items__group-name
             = group.name
           .group-items__info-message
-            メッセージはまだありません
+            まだメッセージはありません
