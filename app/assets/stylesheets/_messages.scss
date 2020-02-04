@@ -10,7 +10,6 @@ $SideBGcolor:#253141;
 }
 
 .side-bar{
-  position: fixed;
   height:100vh;
   width:300px;
   background-color:$SideBGcolor;
@@ -68,9 +67,6 @@ $SideBGcolor:#253141;
     width:calc(100vw - 300px);
     background-color:$Whitecolor;
     &__group-info{
-      position:fixed;
-      left:300px;
-      width:calc(100% - 300px);
       height:100px;
       background-color:$Whitecolor;
       border-bottom: 1px solid #eeeeee;
@@ -78,14 +74,11 @@ $SideBGcolor:#253141;
       justify-content: space-between;
     }
     &__message-list{
-      margin:100px 0 90px 300px;
-      width:100%;
+      height:calc(100vh - 190px);
       background-color: #fafafa;
+      overflow: scroll;
     }
     &__message-form{
-      position:fixed;
-      bottom:0;
-      left:300px;
       height:90px;
       background-color: #d2d2d2;
     }
