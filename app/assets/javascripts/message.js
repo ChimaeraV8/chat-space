@@ -1,7 +1,4 @@
 $(function(){
-  last_message_id = $('.member-info:last').data("message-id");
-  console.log(last_message_id);
-  
   function buildHTML(message){
     if( message.photo ){
       var html =
@@ -65,4 +62,28 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     });
   })
+  var reloadMessages = function() {
+    last_message_id = $('.member-info:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+            var insertHTML = '';
+            $.each(messages, function(i, message) {
+              insertHTML += buildHTML(message)
+            });
+            $('.chat-main__message-list:last').append(insertHTML);
+            $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
+          }
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  };
+  
+  setInterval(reloadMessages, 7000);
 });
