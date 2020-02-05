@@ -1,4 +1,7 @@
 $(function(){
+  last_message_id = $('.member-info:last').data("message-id");
+  console.log(last_message_id);
+  
   function buildHTML(message){
     if( message.photo ){
       var html =
