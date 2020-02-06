@@ -10,7 +10,6 @@ $SideBGcolor:#253141;
 }
 
 .side-bar{
-  height:100vh;
   width:300px;
   background-color:$SideBGcolor;
   &__user-name{
@@ -21,6 +20,7 @@ $SideBGcolor:#253141;
     align-items: center;
   }
   &__group-list{
+    overflow: scroll;
     height:calc(100vh - 100px);
     background-color: #2f3e51;
   }
